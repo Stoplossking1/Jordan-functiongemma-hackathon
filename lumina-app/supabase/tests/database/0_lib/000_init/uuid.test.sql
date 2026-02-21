@@ -1,0 +1,69 @@
+BEGIN;
+SELECT plan(53);
+
+SELECT is(uuid_from_millis(0, '00123456-1234-123a-857f-91e5360c927c'), '00000000-0000-123a-857f-91e5360c927c');
+SELECT is(uuid_from_millis(543035363746, '00123456-1234-123a-857f-91e5360c927c'), '007e6f6e-11a2-123a-857f-91e5360c927c');
+SELECT is(uuid_from_millis(-1, '00123456-1234-123a-857f-91e5360c927c'), 'ffffffff-ffff-123a-857f-91e5360c927c');
+SELECT is(uuid_from_millis(0, NULL), NULL);
+SELECT is(uuid_from_millis(NULL, NULL), NULL);
+
+SELECT is(uuid_to_millis('00000000-0000-123a-857f-91e5360c927c'), 0::bigint);
+SELECT is(uuid_to_millis('007e6f6e-11a2-123a-857f-91e5360c927c'), 543035363746::bigint);
+SELECT is(uuid_to_millis('ffffffff-ffff-123a-857f-91e5360c927c'), -1::bigint);
+
+SELECT is(uuid_from_longs(NULL, NULL), NULL);
+SELECT is(uuid_from_longs(0, 0), '00000000-0000-0000-0000-000000000000');
+SELECT is(uuid_from_longs(1, 2), '00000000-0000-0001-0000-000000000002');
+SELECT is(uuid_from_longs(-1, -1), 'ffffffff-ffff-ffff-ffff-ffffffffffff');
+SELECT is(uuid_from_longs(-4822678189205112, 8603657889541918976), 'ffeeddcc-bbaa-9988-7766-554433221100');
+SELECT is(uuid_from_longs(-9223372036854775808, 9223372036854775807), '80000000-0000-0000-7fff-ffffffffffff');
+SELECT is(uuid_from_longs(9223372036854775807, -9223372036854775808), '7fffffff-ffff-ffff-8000-000000000000');
+
+SELECT isnt(uuid_from_timestamp(), NULL, 'we should produce a non-null uuid');
+-- millis: 1732996800000
+SELECT is(uuid_from_timestamp('2024-11-30 15:00:00.000 -0500', '00000000-0000-0000-0000-000000000000'), '01937ea8-9e00-0000-0000-000000000000');
+
+SELECT is(uuid_at(0), '00000000-0000-0000-0000-000000000000');
+SELECT is(uuid_at(1), '00000000-0001-0000-0000-000000000000');
+SELECT is(uuid_at(1, 2), '00000000-0001-0000-0000-000000000002');
+SELECT is(uuid_at(0, 10), '00000000-0000-0000-0000-00000000000A');
+SELECT is(uuid_at(-1), 'ffffffff-ffff-0000-0000-000000000000');
+SELECT is(uuid_at(0, -1), '00000000-0000-0000-ffff-ffffffffffff');
+SELECT is(uuid_at(-1, -1), 'ffffffff-ffff-0000-ffff-ffffffffffff');
+SELECT is(uuid_at(507, 1), '00000000-01fb-0000-0000-000000000001');
+
+SELECT is(uuid_add_millis_and_id('00000000-0000-0000-0000-000000000000'), '00000000-0000-0000-0000-000000000000');
+SELECT is(uuid_add_millis_and_id('12345678-90AB-CDEF-FEDC-BA0987654321'), '12345678-90AB-CDEF-FEDC-BA0987654321');
+SELECT is(uuid_add_millis_and_id('12345678-90AB-CDEF-FEDC-BA0987654321', NULL, NULL), '12345678-90AB-CDEF-FEDC-BA0987654321');
+SELECT is(uuid_add_millis_and_id('00000000-0000-0000-0000-000000000000', NULL, '12345678-90AB-CDEF-FEDC-BA0987654321'), '00000000-0000-cdef-fedc-ba0987654321');
+SELECT is(uuid_add_millis_and_id('00000000-0000-0000-0000-000000000000', 0), '00000000-0000-0000-0000-000000000000');
+SELECT is(uuid_add_millis_and_id('00000000-0000-0000-0000-000000000000', 1), '00000000-0001-0001-0000-000000000001');
+SELECT is(uuid_add_millis_and_id('00000000-0000-0000-0000-000000000000', 1521342563746), '01623715-45a2-45a2-0000-0162371545a2');
+SELECT is(uuid_add_millis_and_id('00000000-0000-0000-0000-000000000000', 1521342563746, '00000000-0000-0000-0000-000000000000'), '01623715-45a2-45a2-0000-0162371545a2');
+SELECT is(uuid_add_millis_and_id('00777777-524c-4a81-69bb-ea0bd7d5791d', 1521342563746), '01623715-45a2-0f23-69bb-eb69e0c03cbf');
+SELECT is(uuid_add_millis_and_id('00123456-1234-123a-857f-91e5360c927c'), '00123456-1234-123a-857f-91e5360c927c');
+SELECT is(uuid_add_millis_and_id('00777777-524c-4a81-69bb-ea0bd7d5791d', null, '00123456-1234-123a-857f-91e5360c927c'), '00777777-524c-58bb-ecc4-7beee1d9eb61');
+SELECT is(uuid_add_millis_and_id('00123456-1234-123a-857f-91e5360c927c', 1521342563746), '01623715-45a2-5798-857f-90870119d7de');
+SELECT is(uuid_add_millis_and_id('00123456-1234-123a-857f-91e5360c927c', 1521342563746, '00777777-524c-4a81-69bb-ea0bd7d5791d'), '01623715-45a2-1d19-ecc4-7a8cd6ccaec3');
+SELECT is(uuid_add_millis_and_id(NULL, NULL, '00777777-524c-4a81-69bb-ea0bd7d5791d'), '00777777-524c-4a81-69bb-ea0bd7d5791d');
+SELECT is(uuid_add_millis_and_id(NULL), null);
+
+SELECT is(uuid_add_timestamp_and_id('00000000-0000-0000-0000-000000000000', NULL), '00000000-0000-0000-0000-000000000000');
+SELECT is(uuid_add_timestamp_and_id('00000000-0000-0000-0000-000000000000', 'Sun Mar 18 2018 03:09:23.746'), '01623715-45a2-45a2-0000-0162371545a2');
+
+SELECT is(uuid_to_base64('00123456-1234-123a-857f-91e5360c927c'), 'ABI0VhI0EjqFf5HlNgySfA');
+SELECT is(uuid_to_base64('00777777-524c-4a81-69bb-ea0bd7d5791d'), 'AHd3d1JMSoFpu-oL19V5HQ');
+SELECT is(uuid_to_base64('007e6f6e-11a2-4a81-69bb-ea0bd7f5791d'), 'AH5vbhGiSoFpu-oL1_V5HQ');
+SELECT is(uuid_to_base64('007e6f6e-11a2-4a81-69bb-ea0bd7d5791d'), 'AH5vbhGiSoFpu-oL19V5HQ');
+
+SELECT is(uuid_from_base64('AG6-CVxXnd9QQpGvRwLblQ'), '006ebe09-5c57-9ddf-5042-91af4702db95');
+SELECT is(uuid_from_base64('AH5vbhGiSoFpu-oL1_V5HQ'), '007e6f6e-11a2-4a81-69bb-ea0bd7f5791d');
+SELECT is(uuid_from_base64('AH5vbhGiSoFpu-oL1_V5HQ=='), '007e6f6e-11a2-4a81-69bb-ea0bd7f5791d');
+
+SELECT is(int_id_from_millis(1735689600000), 0);
+SELECT is(int_id_from_millis(1735689601000), 1);
+SELECT is(int_id_from_timestamp('2025-01-01 00:00:00 UTC'), 0);
+SELECT is(int_id_from_timestamp('2025-01-01 00:00:10 UTC'), 10);
+
+SELECT * FROM finish();
+ROLLBACK;

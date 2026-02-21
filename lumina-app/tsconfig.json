@@ -1,0 +1,40 @@
+{
+  "extends": "expo/tsconfig.base",
+  "compilerOptions": {
+    "strict": true,
+    "allowImportingTsExtensions": true,
+    "verbatimModuleSyntax": false,
+    "forceConsistentCasingInFileNames": true,
+    "paths": {
+      "@/*": [
+        "./*"
+      ],
+      "@shared/*": [
+        "./supabase/functions/_shared-client/*"
+      ]
+    }
+  },
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    ".expo/types/**/*.ts",
+    "expo-env.d.ts"
+  ],
+  "exclude": [
+    "logs",
+    "supabase/functions/tests",
+    "request-logs",
+    "task-logs"
+  ],
+  "files": [
+    "deno-stubs.d.ts"
+  ],
+  "ts-node": {
+    "compilerOptions": {
+      "customConditions": null,
+      "module": null,
+      "moduleResolution": "node"
+    },
+    "transpileOnly": true
+  }
+}

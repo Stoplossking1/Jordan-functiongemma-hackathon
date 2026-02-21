@@ -1,0 +1,25 @@
+{
+  "notFound": {
+    "title": "Oops! This page wandered off",
+    "subtitle": "No worries! Let's get you back on track.",
+    "goHomeButton": "Go Home"
+  },
+  "index": {
+    "tagline": "Your instant math tutor",
+    "subtitle": "Get step-by-step help with math problems anytime, anywhere — even without internet!",
+    "valuePropositions": {
+      "offline": {
+        "title": "Works Offline",
+        "description": "No internet? No problem! Get instant help anywhere."
+      },
+      "memory": {
+        "title": "Remembers You",
+        "description": "Tracks your progress and helps where you need it most."
+      },
+      "friendly": {
+        "title": "Like a Big Sibling",
+        "description": "Patient, encouraging, and always ready to help."
+      }
+    }
+  }
+}
