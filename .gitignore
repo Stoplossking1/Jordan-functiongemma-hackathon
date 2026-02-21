@@ -213,3 +213,12 @@ server/
 
 # Leaderboard data
 docs/
+
+# Lumina app snapshot local/generated artifacts
+lumina-app/.expo/
+lumina-app/node_modules/
+lumina-app/dist/
+lumina-app/dist-web/
+lumina-app/supabase/.temp/
+lumina-app/.env
+lumina-app/.env.*
