@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "woz:revenue-cat": {
+      "type": "stdio",
+      "command": "../mcp/revenue-cat.sh"
+    }
+  },
+  "servers": {
+    "woz:revenue-cat": {
+      "type": "stdio",
+      "command": "../mcp/revenue-cat.sh"
+    }
+  }
+}

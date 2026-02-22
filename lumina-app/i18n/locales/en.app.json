@@ -1,0 +1,30 @@
+{
+  "assistant": {
+    "offlineLocalPrefix": "You're offline, so I'm using on-device math mode. Answer:",
+    "offlineImageTypePrompt": "I can't read images offline yet. Please type the math problem so I can help right away.",
+    "localRuntimeUnavailableNotice": "On-device tutoring requires a development build or TestFlight. In Expo Go, Lumina uses cloud tutoring when you're online."
+  },
+  "notFound": {
+    "title": "Oops! This page wandered off",
+    "subtitle": "No worries! Let's get you back on track.",
+    "goHomeButton": "Go Home"
+  },
+  "index": {
+    "tagline": "Your instant math tutor",
+    "subtitle": "Get step-by-step help with math problems anytime, anywhere — even without internet!",
+    "valuePropositions": {
+      "offline": {
+        "title": "Works Offline",
+        "description": "No internet? No problem! Get instant help anywhere."
+      },
+      "memory": {
+        "title": "Remembers You",
+        "description": "Tracks your progress and helps where you need it most."
+      },
+      "friendly": {
+        "title": "Like a Big Sibling",
+        "description": "Patient, encouraging, and always ready to help."
+      }
+    }
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "app": {
+    "name": "Lumina"
+  },
+  "auth": {
+    "deleteAccount": "Delete Account",
+    "deleteAccountConfirmation": "Are you sure you want to delete your account? This action is permanent.",
+    "signIn": "Log in",
+    "signUp": "Sign Up",
+    "signOut": "Sign Out",
+    "signOutConfirmation": "Are you sure you want to sign out?",
+    "forgotPassword": "Forgot Password?",
+    "email": "Email",
+    "password": "Password",
+    "alreadyHaveAnAccount": "Already Have an Account?",
+    "createAnAccount": "Create an Account",
+    "resetPassword": "Reset Password",
+    "resetPasswordSentTitle": "Password Reset Sent",
+    "resetPasswordDescription": "Enter your email address and we'll send you instructions to reset your password.",
+    "sendResetLink": "Send Reset Link",
+    "backToLogin": "Back to Login",
+    "checkYourEmail": "Check Your Email",
+    "title": "App name",
+    "resetPasswordSentDescription": "We've sent password reset instructions to {{email}}. Please check your inbox and follow the link to create a new password.",
+    "emailVerificationSentDescription": "Verification link sent to {{email}}. Please verify your email and log in to continue.",
+    "emailVerificationSentTitle": "Verify Your Email",
+    "resendEmail": "Resend Email",
+    "accountExists": "You already have an account. Try logging in or resetting your password.",
+    "verifyEmailResentSuccess": "Please check your inbox for the new email verification!",
+    "updatePassword": "Update Password",
+    "updatePasswordDescription": "Enter your new password below",
+    "newPassword": "New Password",
+    "confirmNewPassword": "Confirm New Password",
+    "passwordsNotMatch": "Passwords do not match",
+    "updatePasswordSuccess": "Password Updated Successfully",
+    "updatePasswordSuccessDescription": "You can now go back to the app and log in with your new password.",
+    "updatePasswordInvalidRecoveryLink": "Invalid recovery link. Please try resetting your password again."
+  },
+  "camera": {
+    "permission": "We need your permission to show the camera"
+  },
+  "chat": {
+    "welcomeMessage": "Hello! How can I help you?",
+    "inputPlaceholder": "Send a message...",
+    "errorMessage": "Sorry, I couldn't process your request."
+  },
+  "common": {
+    "slogan": "CONNECT THE REAL WAY",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "day": "day",
+    "days": "days",
+    "dayAbbreviated": "d",
+    "daily": "daily",
+    "delete": "Delete",
+    "week": "week",
+    "weeks": "weeks",
+    "weekAbbreviated": "wk",
+    "weekly": "weekly",
+    "month": "month",
+    "months": "months",
+    "monthAbbreviated": "mo",
+    "monthly": "monthly",
+    "year": "year",
+    "years": "years",
+    "yearAbbreviated": "yr",
+    "yearly": "yearly",
+    "skip": "Skip",
+    "next": "Next",
+    "close": "Close"
+  },
+  "dailyPictures": {
+    "frontPicture": "+ Front Picture",
+    "backPicture": "+ Back Picture"
+  },
+  "errors": {
+    "title": "Something went wrong",
+    "defaultMessage": "Something went wrong. Please try again or contact support if the problem persists.",
+    "tryAgain": "Try Again",
+    "reportIssue": "Report Issue",
+    "technicalDetails": "Technical Details (Development):",
+    "error": "Error",
+    "message": "Message",
+    "component": "Component",
+    "projectId": "Project ID",
+    "wizardErrorTitle": "Uh oh.\nWoz made a mistake.",
+    "wizardErrorDescription": "You might be able to fix this issue using the edit tools on the App Preview page of Woz on your computer.",
+    "technicalTitle": "Something went wrong",
+    "technicalDescription": "We have alerted our software engineers, and are working on a fix.",
+    "nativeOnlyTitle": "Mobile Only Feature",
+    "nativeOnlyMessage": "This app contains mobile-only components. Please load the app on your device for the full experience.",
+    "refreshApp": "Refresh my app",
+    "getHelp": "Get help",
+    "hideInfo": "Hide info",
+    "moreInfo": "More info",
+    "name": "Name",
+    "digest": "Digest",
+    "sources": "Sources",
+    "componentStack": "Component Stack",
+    "expand": "Expand",
+    "minimize": "Minimize",
+    "cause": "Cause",
+    "unknownCause": "Unknown cause"
+  },
+  "navigation": {
+    "navigate": "Navigate",
+    "back": "Back",
+    "dismissAll": "Dismiss All",
+    "dismissTo": "Dismiss To",
+    "dismiss": "Dismiss",
+    "push": "Push",
+    "replace": "Replace",
+    "description": "Description"
+  },
+  "onboarding": {
+    "birthYear": {
+      "title": "What year were you born?"
+    },
+    "gender": {
+      "title": "What gender do you identify with?",
+      "female": "Female",
+      "male": "Male",
+      "nonBinary": "Non Binary"
+    },
+    "letsgo": {
+      "title": "Let's go!",
+      "payment": "To finalize everything and unlock your full training program, we just need to take care of the payment details.",
+      "paymentMore": "This ensures you get uninterrupted access to all the workouts, coaching insights, and progress tracking. Let's get you ready to start achieving those goals!"
+    },
+    "photoUpload": {
+      "title": "Upload a Profile Pic (Optional)?"
+    },
+    "step": "Step"
+  },
+  "profilePicture": {
+    "title": "Profile Picture?",
+    "addFromGallery": "Add From Gallery",
+    "addFromCamera": "Add From Camera"
+  },
+  "tabBar": {
+    "profile": "Profile",
+    "dailyPictures": "Daily Pictures"
+  }
+}

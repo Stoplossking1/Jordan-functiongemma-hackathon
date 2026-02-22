@@ -1,0 +1,7 @@
+{
+  "assistant": {
+    "offlineLocalPrefix": "You're offline, so I'm using on-device math mode. Answer:",
+    "offlineImageTypePrompt": "I can't read images offline yet. Please type the math problem so I can help right away.",
+    "localRuntimeUnavailableNotice": "On-device tutoring requires a development build or TestFlight. In Expo Go, Lumina uses cloud tutoring when you're online."
+  }
+}
